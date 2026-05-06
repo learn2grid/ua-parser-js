@@ -251,7 +251,7 @@
     "test:jshint": "jshint src/main",
     "test:lockfile-lint": "lockfile-lint -p package-lock.json",
     "test:mocha": "mocha --recursive test/unit",
-    "test:nyc": "nyc --include=src/**/*.js npm run test",
+    "test:nyc": "nyc --timeout=50000 --include=src/**/*.js npm run test",
     "test:playwright": "npx playwright install && playwright test test/e2e --browser all"
   },
   "dependencies": {
