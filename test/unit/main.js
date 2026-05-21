@@ -131,7 +131,7 @@ describe('Returns', function () {
 });
 
 
-describe('setExtension()', () => {
+describe('useExtension()', () => {
     
     it('Extends default parser', () => {
         const uap = new UAParser();
