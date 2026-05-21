@@ -170,7 +170,7 @@
         itemListToArray = function (header) {
             if (!header) return undefined;
             var arr = [];
-            var tokens = strip(/\\?\"/g, header).split(',');
+            var tokens = normalizeHeaderValue(header).split(',');
             for (var i = 0; i < tokens.length; i++) {
                 if (tokens[i].indexOf(';') > -1) {
                     var token = trim(tokens[i]).split(';v=');
@@ -187,6 +187,9 @@
         majorize = function (version) {
             return isString(version) ? strip(/[^\d\.]/g, version).split('.')[0] : undefined;
         },
+        normalizeHeaderValue = function (str) {
+            return isString(str) ? trim(strip(/\\?\"/g, str), UA_MAX_LENGTH) : undefined;
+        },
         setProps = function (arr) {
             for (var i in arr) {
                 if (!arr.hasOwnProperty(i)) continue;
@@ -202,9 +205,6 @@
         },
         strip = function (pattern, str) {
             return isString(str) ? str.replace(pattern, EMPTY) : str;
-        },
-        stripQuotes = function (str) {
-            return strip(/\\?\"/g, str); 
         },
         trim = function (str, len) {
             str = strip(/^\s\s*/, String(str));
@@ -618,7 +618,7 @@
             /oid[^\)]+; (redmi[\-_ ]?(?:note|k)?[\w_ ]+|m?[12]\d[01]\d\w{3,6}|poco[\w ]+|(shark )?\w{3}-[ah]0|qin ?[1-3](s\+|ultra| pro)?)( bui|; wv|\))/i,
                                                                                 // Xiaomi Mi
             /\b(mi[-_ ]?(?:a\d|one|one[_ ]plus|note|max|cc)?[_ ]?(?:\d{0,2}\w?)[_ ]?(?:plus|se|lite|pro)?( 5g|lte)?)(?: bui|\))/i,
-            / ([\w ]+) miui\/v?\d/i
+            /; ([\w ]+) miui\/v?\d/i
             ], [[MODEL, /_/g, ' '], [VENDOR, XIAOMI], [TYPE, MOBILE]], [
 
             // OnePlus
@@ -1202,12 +1202,12 @@
                 [BRANDS, itemListToArray(uach[CH])],
                 [FULLVERLIST, itemListToArray(uach[CH_FULL_VER_LIST])],
                 [MOBILE, /\?1/.test(uach[CH_MOBILE])],
-                [MODEL, stripQuotes(uach[CH_MODEL])],
-                [PLATFORM, stripQuotes(uach[CH_PLATFORM])],
-                [PLATFORMVER, stripQuotes(uach[CH_PLATFORM_VER])],
-                [ARCHITECTURE, stripQuotes(uach[CH_ARCH])],
+                [MODEL, normalizeHeaderValue(uach[CH_MODEL])],
+                [PLATFORM, normalizeHeaderValue(uach[CH_PLATFORM])],
+                [PLATFORMVER, normalizeHeaderValue(uach[CH_PLATFORM_VER])],
+                [ARCHITECTURE, normalizeHeaderValue(uach[CH_ARCH])],
                 [FORMFACTORS, itemListToArray(uach[CH_FORM_FACTORS])],
-                [BITNESS, stripQuotes(uach[CH_BITNESS])]
+                [BITNESS, normalizeHeaderValue(uach[CH_BITNESS])]
             ]);
         } else {
             for (var prop in uach) {
