@@ -910,6 +910,26 @@
         }
     },
     {
+        "desc"    : "KimiBot",
+        "ua"      : "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; KimiBot/1.0; +https://www.kimi.com/policies/kimi-crawlers",
+        "expect"  :
+        {
+            "name"    : "KimiBot",
+            "version" : "1.0",
+            "type"    : "crawler"
+        }
+    },
+    {
+        "desc"    : "Kimi-SearchBot",
+        "ua"      : "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; Kimi-SearchBot/1.0; +https://www.kimi.com/policies/kimi-crawlers",
+        "expect"  :
+        {
+            "name"    : "Kimi-SearchBot",
+            "version" : "1.0",
+            "type"    : "crawler"
+        }
+    },
+    {
         "desc"    : "Linespider",
         "ua"      : "Mozilla/5.0 (compatible; Linespider/1.1; +https://lin.ee/4dwXkTH)",
         "expect"  :

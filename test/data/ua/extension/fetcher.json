@@ -310,6 +310,16 @@
         }
     },
     {
+        "desc"    : "Kimi-User",
+        "ua"      : "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; Kimi-User/1.0; +https://www.kimi.com/policies/kimi-crawlers",
+        "expect"  :
+        {
+            "name"    : "Kimi-User",
+            "version" : "1.0",
+            "type"    : "fetcher"
+        }
+    },
+    {
         "desc"    : "Meta-ExternalFetcher",
         "ua"      : "meta-externalfetcher/1.1 (+https://developers.facebook.com/docs/sharing/webmasters/crawler)",
         "expect"  :
