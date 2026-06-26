@@ -446,6 +446,7 @@
             ], [NAME, VERSION], [
             /(lbbrowser|luakit|rekonq|steam(?= (clie|tenf|gameo)))/i            // LieBao Browser/Luakit/Rekonq/Steam
             ], [NAME], [
+            /version\/([\d\.]+) .+ (brave)$/i,                                  // Brave
             /ome\/([\w\.]+).+(iron(?= saf)|360(?=[es]e$))/i                     // Iron / 360
             ], [VERSION, NAME], [
 

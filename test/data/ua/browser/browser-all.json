@@ -2632,6 +2632,16 @@
         }
     },
     {
+        "desc"    : "Brave on iOS",
+        "ua"      : "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.4.2 Mobile/15E148 Safari/604.1 Brave",
+        "expect"  :
+        {
+            "name"    : "Brave",
+            "version" : "26.4.2",
+            "major"   : "26"
+        }
+    },
+    {
         "desc"    : "Whale Browser",
         "ua"      : "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.146 Whale/2.6.90.14 Safari/537.36",
         "expect"  :
