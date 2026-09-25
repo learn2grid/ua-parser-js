@@ -242,7 +242,7 @@
   "bin": "./script/cli.js",
   "sideEffects": false,
   "scripts": {
-    "build": "./script/build-dist.sh && ./script/build-esm.js",
+    "build": "./script/build-esm.js && ./script/build-dist.sh",
     "build+test": "npm run build && npm run test",
     "test": "./script/test-all.sh",
     "test:dts-lint": "tsd --typings src/main/ua-parser.d.ts --files test/static/dts-lint.ts",
