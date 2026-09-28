@@ -430,6 +430,7 @@ const OSName = Object.freeze({
     SERIES40: 'Series40',
     SLACKWARE: 'Slackware',
     SOLARIS: 'Solaris',
+    STEAMOS: 'SteamOS',
     SUSE: 'SUSE',
     SYMBIAN: 'Symbian',
     TIZEN: 'Tizen',

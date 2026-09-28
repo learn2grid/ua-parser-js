@@ -1046,9 +1046,12 @@
             /kepler ([\w\.]+); (aft|aeo)/i                                      // Vega OS
             ], [VERSION, [NAME, 'Vega OS']],[
             /(netrange)mmh/i,                                                   // Netrange
-            /(nettv)\/(\d+\.[\w\.]+)/i,                                         // NetTV
+            /(nettv)\/(\d+\.[\w\.]+)/i                                          // NetTV
+            ], [NAME, VERSION], [
 
             // Console
+            /steam ?deck/i                                                      // SteamOS
+            ], [[NAME, 'SteamOS']], [
             /(nintendo|playstation) (\w+)/i,                                    // Nintendo/Playstation
             /(xbox); +xbox ([^\);]+)/i,                                         // Microsoft Xbox (360, One, X, S, Series X, Series S)
             /(pico) .+os([\w\.]+)/i,                                            // Pico
