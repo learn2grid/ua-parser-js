@@ -876,10 +876,11 @@
             ], [MODEL, [VENDOR, SONY], [TYPE, CONSOLE]], [
             /\b(xbox(?: one)?(?!; xbox))[\); ]/i                                // Microsoft Xbox
             ], [MODEL, [VENDOR, MICROSOFT], [TYPE, CONSOLE]], [
+            /(steam ?deck)/i
+            ], [[MODEL, /\BD/, ' D'], [VENDOR, 'Valve'], [TYPE, CONSOLE]], [
             /(ouya)/i,                                                          // Ouya
             /(nintendo) (\w+)/i,                                                // Nintendo
             /(retroid) (pocket ([^\)]+))/i,                                     // Retroid Pocket
-            /(valve).+(steam deck)/i,
             /droid.+; ((shield|rgcube|gr0006))( bui|\))/i                       // Nvidia Portable/Anbernic/Logitech
             ], [[VENDOR, strMapper, { 'Nvidia': 'Shield', 'Anbernic': 'RGCUBE', 'Logitech': 'GR0006' }], MODEL, [TYPE, CONSOLE]], [
 
